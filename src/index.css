@@ -3,6 +3,7 @@
   --primary-bg-2: #593;
   --primary-color-1: #f8f8f8;
   --primary-color-2: #fff;
+  --focus-color: #fe8;
   --transistion: all linear 150ms;
 }
 
@@ -25,7 +26,7 @@ li {
 }
 
 a {
-  color: var(--primary-color-1);
+  color: inherit;
   text-decoration: none;
 }
 
@@ -36,10 +37,4 @@ h4,
 h5,
 h6 {
   font-weight: 400;
-}
-
-a:hover {
-  color: var(--primary-color-2);
-  transform: scale(1.5);
-  transition: --transistion;
 }
