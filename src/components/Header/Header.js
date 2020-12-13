@@ -7,7 +7,6 @@ const Header = () => {
   const links = ["home", "about", "contact"];
   const { pathname } = useLocation();
   const currentPage = pathname.substring(1);
-  console.log(currentPage);
   return (
     <header className={styles.container}>
       <nav className={styles.center}>
