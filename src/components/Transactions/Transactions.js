@@ -8,9 +8,13 @@ const transactions = [
 const Transactions = () => {
   return (
     <div>
-      {transactions.map(transaction => {
-        return <Transaction key={transaction.id} {...transaction} />;
-      })}
+      <h4>Your History</h4>
+      <hr />
+      <ul>
+        {transactions.map(transaction => {
+          return <Transaction key={transaction.id} {...transaction} />;
+        })}
+      </ul>
     </div>
   );
 };
