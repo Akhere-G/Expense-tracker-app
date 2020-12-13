@@ -40,3 +40,15 @@
   transition: var(--transistion);
   color: var(--focus-color);
 }
+
+.activeLink {
+  color: var(--focus-color);
+}
+
+.activeLink:hover {
+  transform: scale(1);
+}
+
+.activeLink a:hover {
+  cursor: default;
+}
