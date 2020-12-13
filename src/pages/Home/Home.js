@@ -5,6 +5,7 @@ import { Balance, Transactions, AddTransaction } from "../../components";
 const Home = () => {
   return (
     <div>
+      <h2>Your Expenses</h2>
       <Balance />
       <Transactions />
       <AddTransaction />

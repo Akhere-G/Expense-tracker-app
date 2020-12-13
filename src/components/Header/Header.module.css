@@ -5,9 +5,10 @@
 }
 
 .center {
-  padding: 0.5em;
-
   width: 90%;
+  padding-bottom: 0.5em;
+  padding-top: 0.5em;
+
   max-width: 750px;
   height: 100%;
   margin: auto;
@@ -21,14 +22,14 @@
 }
 
 .link {
-  margin-right: 1em;
+  margin-right: 0.7em;
   transform: scale(1);
 
   transition: var(--transistion);
 }
 
 .logo {
-  margin-right: 1em;
+  margin-right: 0em;
   transform: scale(1);
   font-size: 1.75rem;
   transition: var(--transistion);

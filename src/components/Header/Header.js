@@ -11,7 +11,7 @@ const Header = () => {
     <header className={styles.container}>
       <nav className={styles.center}>
         <div className={styles.logo}>
-          <Link to='/'>Income Tracker</Link>
+          <Link to='/'>Expense Tracker</Link>
         </div>
         <ul className={styles.links}>
           {links.map((link, index) => {

@@ -1,0 +1,36 @@
+.balance {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+.body {
+  background-color: #fff;
+  width: 70%;
+  max-width: 300px;
+  margin: auto;
+  padding: 1em;
+  margin-top: 1em;
+  border: 1px solid #0003;
+  box-shadow: 1px 2px 4px #0005;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.income p {
+  color: var(--plus);
+}
+
+.expense p {
+  color: var(--negative);
+}
+
+.separator {
+  height: 30px;
+  margin: 0 1rem;
+  display: flex;
+  width: 1px;
+  background-color: #0003;
+}
