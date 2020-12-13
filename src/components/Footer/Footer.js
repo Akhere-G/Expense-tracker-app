@@ -4,7 +4,7 @@ import styles from "./Footer.module.css";
 const Footer = () => {
   return (
     <div className={styles.footer}>
-      <h4>Footer</h4>
+      <p>Akhere Ihoeghinlan &#169; 2020 </p>
     </div>
   );
 };

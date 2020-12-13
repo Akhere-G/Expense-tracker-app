@@ -29,6 +29,15 @@ a {
   text-decoration: none;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+}
+
 a:hover {
   color: var(--primary-color-2);
   transform: scale(1.5);
