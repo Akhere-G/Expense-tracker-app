@@ -1,0 +1,71 @@
+.selector {
+  width: 20%;
+}
+.current {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+
+  position: relative;
+  justify-content: space-between;
+  border: none;
+  border-bottom: 1px solid #0003;
+  width: 100%;
+  padding-left: 0.5em;
+  transition: all ease-in 150ms;
+}
+
+.current:hover,
+.current:focus {
+  cursor: pointer;
+  border-bottom: 1px solid #ddcc4c;
+  transition: all ease-in 150ms;
+}
+
+.current > svg {
+  transition: all ease-in 300ms;
+  transform: scale(1);
+}
+
+.current:hover > svg,
+.current:focus > svg {
+  color: #ddcc4c;
+  transition: all ease-in 300ms;
+
+  transform: scale(1.2);
+}
+
+.dropdown {
+  opacity: 0;
+  position: absolute;
+  background-color: #fff;
+  padding: 0em;
+  right: 0.5em;
+  box-shadow: 2px 3px 4px #0003;
+  border: 1px solid #0003;
+  transform: translate(0%, -50%);
+  transition: all linear 300ms;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.show {
+  transition: all linear 300ms;
+  opacity: 1;
+  transform: translate(0%, 0%);
+  pointer-events: all;
+}
+
+.option {
+  padding: 0.3em;
+  transition: all linear 300ms;
+  background-color: #fff;
+}
+
+.option:hover,
+.option:focus {
+  background-color: #ffee7e;
+  transition: all linear 300ms;
+  cursor: pointer;
+}
