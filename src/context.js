@@ -24,6 +24,18 @@ export const AppProvider = ({
     });
   };
 
+  const changeSearchOption = searchOption => {
+    switch (searchOption) {
+      case "all":
+      case "income":
+      case "expenses":
+        console.log("returning a dispatch called", searchOption);
+        return dispatch({ type: actionTypes.FILTER, payload: searchOption });
+      default:
+        console.error("Inccorrect search option");
+    }
+  };
+
   useEffect(() => {
     localStorage.setItem(storageKey, JSON.stringify(state));
   }, [state]);
@@ -33,6 +45,7 @@ export const AppProvider = ({
       value={{
         state,
         addTransaction,
+        changeSearchOption,
         deleteTransaction,
       }}
     >

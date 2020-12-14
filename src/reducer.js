@@ -1,19 +1,11 @@
 import actionTypes from "./actionTypes";
 import { v4 as idMaker } from "uuid";
-import { sumBalance, sumIncome, sumExpenses } from "./Utils.js";
+import { sumBalance, sumIncome, sumExpenses, filterFunc } from "./Utils.js";
+
 export const reducer = (state, action) => {
   console.log("state", state, "action", action);
   const filterItem = item => {
-    switch (state.searchOption) {
-      case "all":
-        return true;
-      case "income":
-        return item > 0;
-      case "expenses":
-        return item < 0;
-      default:
-        return true;
-    }
+    return filterFunc(state.searchOption, item);
   };
 
   switch (action.type) {
@@ -56,6 +48,21 @@ export const reducer = (state, action) => {
         expenses: sumExpenses(filteredNewList),
         transactions: newTransactions,
         searchItems: filteredNewList,
+      };
+    case actionTypes.FILTER:
+      console.log("filtering using: ", action.payload);
+      const newSearchOption = action.payload;
+      const filteredList = state.transactions.filter(item =>
+        filterFunc(newSearchOption, item.amount)
+      );
+
+      return {
+        ...state,
+        balance: sumBalance(filteredList),
+        income: sumIncome(filteredList),
+        expenses: sumExpenses(filteredList),
+        searchOption: newSearchOption,
+        searchItems: filteredList,
       };
     default:
       return state;

@@ -9,8 +9,6 @@ const Transactions = () => {
     deleteTransaction,
   } = useGlobalState();
 
-  console.log(useGlobalState());
-
   const transactions = searchItems;
   if (transactions < 1) {
     return (

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Search.module.css";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
+import useGlobalState from "../../context";
 
 const selectOptions = {
   default: "all",
@@ -9,6 +10,7 @@ const selectOptions = {
 const Search = () => {
   const [option, setOption] = useState(selectOptions.default);
   const [showMenu, setShowMenu] = useState(false);
+  const { changeSearchOption } = useGlobalState();
 
   const openMenu = () => {
     setShowMenu(true);
@@ -23,14 +25,15 @@ const Search = () => {
   };
 
   const handleBlur = e => {
-    console.log(e.target.id);
     if (e.target.id === "last") {
       setShowMenu(false);
     }
   };
 
-  const choseOption = option => {
-    setOption(option);
+  const choseOption = newOption => {
+    console.log("switched to: ", newOption);
+    setOption(newOption);
+    changeSearchOption(newOption);
     closeMenu();
   };
 

@@ -1,26 +1,3 @@
-const initialTransactions = [
-  {
-    id: 1,
-    title: "bread",
-    amount: -5,
-  },
-  {
-    id: 2,
-    title: "eggs",
-    amount: -10,
-  },
-  {
-    id: 3,
-    title: "paycheck",
-    amount: 5,
-  },
-  {
-    id: 4,
-    title: "birythday gift",
-    amount: 20,
-  },
-];
-
 export const sumIncome = transactions => {
   return transactions.reduce((sum, current) => {
     const num = current.amount;
@@ -45,4 +22,17 @@ export const sumBalance = transactions => {
   return transactions.reduce((sum, current) => {
     return sum + current.amount;
   }, 0);
+};
+
+export const filterFunc = (searchOption, item) => {
+  switch (searchOption) {
+    case "all":
+      return true;
+    case "income":
+      return item > 0;
+    case "expenses":
+      return item < 0;
+    default:
+      return true;
+  }
 };
