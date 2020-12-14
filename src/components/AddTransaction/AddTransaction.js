@@ -42,7 +42,6 @@ const AddTransaction = () => {
               type='text'
               value={title}
               onChange={handleTitleChange}
-              className={styles.titleInput}
               placeholder='title'
               id='titleInput'
             />
@@ -53,7 +52,6 @@ const AddTransaction = () => {
               type='number'
               value={amount}
               onChange={handleamountChange}
-              className={styles.amountInput}
               placeholder='amount'
               id='amountInput'
             />
