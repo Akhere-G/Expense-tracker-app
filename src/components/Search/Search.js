@@ -29,12 +29,16 @@ const Search = () => {
     }
   };
 
+  const choseOption = option => {
+    setOption(option);
+    closeMenu();
+  };
+
   return (
     <div className={`mainBox ${styles.search}`}>
       <h4>Filter</h4>
       <div
         className={styles.selector}
-        onMouseLeave={closeMenu}
         onBlurCapture={e => {
           handleBlur(e);
         }}
@@ -52,6 +56,7 @@ const Search = () => {
                 key={index}
                 className={styles.option}
                 id={selectOptions.options.length - 1 === index ? "last" : ""}
+                onClick={() => choseOption(option)}
               >
                 {option}
               </button>
