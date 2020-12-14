@@ -1,10 +1,14 @@
-import { useState, useContext, useReducer, createContext } from "react";
+import { useEffect, useContext, useReducer, createContext } from "react";
 
-import { reducer, initialState } from "./reducer";
 import actionTypes from "./actionTypes";
-const AppContext = createContext(initialState);
+const AppContext = createContext(null);
 
-export const AppProvider = ({ children }) => {
+export const AppProvider = ({
+  children,
+  initialState,
+  reducer,
+  storageKey,
+}) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const addTransaction = (title, amount) => {
     dispatch({
@@ -12,6 +16,10 @@ export const AppProvider = ({ children }) => {
       payload: { title, amount: parseFloat(amount) },
     });
   };
+
+  useEffect(() => {
+    localStorage.setItem(storageKey, JSON.stringify(state));
+  }, [state]);
 
   return (
     <AppContext.Provider

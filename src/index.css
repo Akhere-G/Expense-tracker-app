@@ -63,6 +63,5 @@ button {
 button:hover {
   color: var(--primary-color-2);
   background-color: var(--primary-bg-3);
-  transform: scale(1.05);
   transition: var(--transistion);
 }
