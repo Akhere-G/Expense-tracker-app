@@ -6,6 +6,7 @@ import styles from "./Transactions.module.css";
 const Transactions = () => {
   const {
     state: { transactions },
+    deleteTransaction,
   } = useGlobalState();
 
   if (transactions < 1) {
@@ -23,7 +24,13 @@ const Transactions = () => {
       <hr />
       <ul>
         {transactions.map(transaction => {
-          return <Transaction key={transaction.id} {...transaction} />;
+          return (
+            <Transaction
+              key={transaction.id}
+              {...transaction}
+              deleteTransaction={deleteTransaction}
+            />
+          );
         })}
       </ul>
     </div>

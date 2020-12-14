@@ -7,6 +7,22 @@
   justify-content: space-between;
 }
 
+.transaction div {
+  display: flex;
+  align-items: center;
+}
+.transaction button {
+  background-color: transparent;
+  color: var(--primary-secondary-1);
+  margin-left: 1em;
+  display: flex;
+}
+
+.transaction button:hover {
+  background-color: transparent;
+  color: var(--negative);
+}
+
 .title {
   padding: 1em;
 }

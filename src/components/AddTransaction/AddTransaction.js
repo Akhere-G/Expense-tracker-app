@@ -19,7 +19,9 @@ const AddTransaction = () => {
   };
 
   const handleSubmit = () => {
-    addTransaction(title, amount);
+    if (title && amount) {
+      addTransaction(title, amount);
+    }
     setTitle("");
     setAmount("");
   };
@@ -28,7 +30,6 @@ const AddTransaction = () => {
     <div className={styles.container}>
       <h4>Add new transaction</h4>
       <hr />
-      amount{amount} title{title}
       <form
         className={styles.form}
         onSubmit={e => {

@@ -27,6 +27,28 @@ export const reducer = (state, action) => {
           },
         ],
       };
+    case actionTypes.DELETE:
+      const transactionToDelete = state.transactions.find(
+        item => item.id === action.payload.id
+      );
+
+      const amountDeducted = transactionToDelete.amount;
+      let incomeDeducted = 0;
+      let expensesDeducted = 0;
+      if (amountDeducted > 0) {
+        incomeDeducted = amountDeducted;
+      } else {
+        expensesDeducted = amountDeducted;
+      }
+      return {
+        ...state,
+        balance: state.balance - amountDeducted,
+        income: state.income - incomeDeducted,
+        expenses: state.expenses - expensesDeducted,
+        transactions: [
+          ...state.transactions.filter(item => item.id !== action.payload.id),
+        ],
+      };
     default:
       return state;
   }

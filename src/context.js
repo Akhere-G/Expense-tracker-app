@@ -17,6 +17,13 @@ export const AppProvider = ({
     });
   };
 
+  const deleteTransaction = id => {
+    dispatch({
+      type: actionTypes.DELETE,
+      payload: { id },
+    });
+  };
+
   useEffect(() => {
     localStorage.setItem(storageKey, JSON.stringify(state));
   }, [state]);
@@ -26,6 +33,7 @@ export const AppProvider = ({
       value={{
         state,
         addTransaction,
+        deleteTransaction,
       }}
     >
       {children}
