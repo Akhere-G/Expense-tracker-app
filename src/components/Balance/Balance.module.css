@@ -23,7 +23,7 @@
   color: var(--plus);
 }
 
-.expense p {
+.expenses p {
   color: var(--negative);
 }
 
