@@ -1,11 +1,11 @@
-export const initialState = {
-  transactions: [],
-};
+import actionTypes from "./actionTypes";
 
-const actionTypes = {
-  ADD: "ADD",
-  DELETE: "DELETE",
-  FILTER: "FILTER",
+export const initialState = {
+  transactions: [
+    { id: 1, title: "Apples", cost: -10 },
+    { id: 2, title: "Haircut", cost: -50 },
+    { id: 3, title: "paycheck", cost: 40 },
+  ],
 };
 
 export const reducer = (state, action) => {

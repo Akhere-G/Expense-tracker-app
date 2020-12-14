@@ -9,12 +9,28 @@
   align-items: center;
   padding: 1em;
   margin-top: 1em;
-  justify-content: center;
+  justify-content: space-between;
 }
 
+.formLeft {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.formLeft div {
+  align-items: baseline;
+  display: flex;
+  width: 100%;
+  flex: 1;
+}
+
+.formRight {
+  display: flex;
+}
 .form label {
-  margin-right: 0.5em;
-  flex: 0.5;
+  text-align: center;
+  margin-right: 0.7em;
 }
 
 .form input {
@@ -22,7 +38,27 @@
   border-radius: 99px;
   background-color: var(--primary-bg-main);
   padding: 1em;
-  flex: 1;
+  margin-bottom: 1em;
+  margin-right: 0.7em;
+}
 
-  margin-right: 2em;
+.titleInput {
+  display: flex;
+  flex: 1.5;
+}
+
+.priceInput {
+  display: flex;
+
+  flex: 1;
+}
+
+.formRight {
+  display: flex;
+}
+.form button {
+  width: 100%;
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 1em;
 }

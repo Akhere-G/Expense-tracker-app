@@ -1,7 +1,7 @@
 :root {
   --primary-bg-1: #482;
   --primary-bg-2: #593;
-  --primary-bg-3: #9d7;
+  --primary-bg-3: #6a4;
   --primary-bg-main: #f2f2fa;
 
   --primary-color-1: #f8f8f8;
@@ -54,5 +54,15 @@ button {
   border: none;
   padding: 0.4em;
   border-radius: 40px;
+  background-color: var(--primary-bg-2);
+  cursor: pointer;
+  color: var(--primary-color-1);
+  transition: var(--transistion);
+}
+
+button:hover {
+  color: var(--primary-color-2);
   background-color: var(--primary-bg-3);
+  transform: scale(1.05);
+  transition: var(--transistion);
 }

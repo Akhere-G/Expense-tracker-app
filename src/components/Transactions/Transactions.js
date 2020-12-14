@@ -1,11 +1,22 @@
 import React from "react";
 import Transaction from "./Transaction/Transaction";
-const transactions = [
-  { id: 1, title: "Apples", cost: -10 },
-  { id: 2, title: "bread", cost: -50 },
-  { id: 3, title: "paycheck", cost: 50 },
-];
+import useGlobalState from "../../context";
+import styles from "./Transactions.module.css";
+
 const Transactions = () => {
+  const {
+    state: { transactions },
+  } = useGlobalState();
+
+  if (transactions < 1) {
+    return (
+      <div>
+        <h4>Your History</h4>
+        <hr />
+        <h2 className={styles.title}>No transactions</h2>
+      </div>
+    );
+  }
   return (
     <div>
       <h4>Your History</h4>
