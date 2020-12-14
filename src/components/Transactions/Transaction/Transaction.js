@@ -5,7 +5,7 @@ const Transaction = ({ id, title, amount, date, deleteTransaction }) => {
   const sign = amount > 0 ? "+" : "-";
   const borderColor = amount > 0 ? styles.plus : styles.negative;
   return (
-    <div className={`${styles.transaction} ${borderColor}`}>
+    <div className={`mainBox ${styles.transaction} ${borderColor}`}>
       <div className={styles.left}>
         <button
           onClick={() => {

@@ -2,14 +2,8 @@
   margin: 3em auto;
 }
 .form {
-  background-color: var(--primary-color-2);
-  border: 1px solid #0003;
-  box-shadow: 1px 2px 4px #0005;
-  display: flex;
-  align-items: center;
   padding: 1em;
   margin-top: 1em;
-  justify-content: space-between;
 }
 
 .formLeft {
@@ -28,6 +22,11 @@
   min-width: 100%;
   flex: 1;
 }
+
+.titleSection {
+  margin-bottom: 1em;
+}
+
 .form label {
   text-align: center;
   margin-right: 1em;
@@ -38,7 +37,6 @@
   border-radius: 99px;
   background-color: var(--primary-bg-main);
   padding: 1em;
-  margin-bottom: 1em;
   margin-right: 0.7em;
   width: 100%;
 }
@@ -58,12 +56,12 @@ input[type="number"] {
   width: 100%;
   display: flex;
   align-items: baseline;
-  margin-bottom: 1em;
 }
 
 @media screen and (min-width: 600px) {
   .titleSection {
     min-width: 50%;
+    margin-bottom: 0em;
   }
   .amountSection {
     min-width: 40%;

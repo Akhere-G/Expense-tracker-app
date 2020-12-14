@@ -65,3 +65,13 @@ button:hover {
   background-color: var(--primary-bg-3);
   transition: var(--transistion);
 }
+
+.mainBox {
+  background-color: var(--primary-color-2);
+  margin-top: 1em;
+  box-shadow: 1px 2px 4px #0005;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}

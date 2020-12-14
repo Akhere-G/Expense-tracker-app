@@ -13,7 +13,7 @@ const Balance = () => {
       <h2 className={styles.number}>
         {sign}£{Math.abs(balance)}
       </h2>
-      <div className={styles.body}>
+      <div className={`${styles.body} mainBox`}>
         <div className={styles.income}>
           <h4>INCOME</h4>
           <p>+£{income}</p>

@@ -31,7 +31,7 @@ const AddTransaction = () => {
       <h4>Add new transaction</h4>
       <hr />
       <form
-        className={styles.form}
+        className={`${styles.form} mainBox`}
         onSubmit={e => {
           e.preventDefault();
         }}
