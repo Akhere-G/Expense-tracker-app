@@ -24,6 +24,7 @@ export const reducer = (state, action) => {
             id: idMaker(),
             title: action.payload.title,
             amount: action.payload.amount,
+            date: action.payload.date,
           },
         ],
       };

@@ -5,11 +5,14 @@
   box-shadow: 1px 2px 4px #0005;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  height: 100%;
 }
 
 .transaction div {
   display: flex;
   align-items: center;
+  min-height: 100%;
 }
 .transaction button {
   background-color: transparent;
@@ -36,4 +39,21 @@
 
 .plus {
   border-right: 1em solid var(--plus);
+}
+
+.left {
+  width: 60%;
+  margin-right: 1em;
+  flex-shrink: 1;
+}
+
+.center {
+  width: 20%;
+  margin-right: 1em;
+  flex-shrink: 1;
+}
+
+.right {
+  width: 20%;
+  flex-shrink: 1;
 }

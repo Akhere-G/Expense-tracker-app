@@ -1,12 +1,12 @@
 import React from "react";
 import styles from "./Transaction.module.css";
 import { Close } from "@material-ui/icons";
-const Transaction = ({ id, title, amount, deleteTransaction }) => {
+const Transaction = ({ id, title, amount, date, deleteTransaction }) => {
   const sign = amount > 0 ? "+" : "-";
   const borderColor = amount > 0 ? styles.plus : styles.negative;
   return (
-    <div className={styles.transaction}>
-      <div>
+    <div className={`${styles.transaction} ${borderColor}`}>
+      <div className={styles.left}>
         <button
           onClick={() => {
             deleteTransaction(id);
@@ -16,9 +16,14 @@ const Transaction = ({ id, title, amount, deleteTransaction }) => {
         </button>
         <p className={styles.title}>{title}</p>
       </div>
-      <p className={`${styles.amount} ${borderColor}`}>
-        {sign}£{Math.abs(amount)}
-      </p>
+      <div className={styles.center}>
+        <p>{date}</p>
+      </div>
+      <div className={styles.right}>
+        <p className={styles.amount}>
+          {sign}£{Math.abs(amount)}
+        </p>
+      </div>
     </div>
   );
 };

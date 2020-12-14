@@ -5,7 +5,6 @@ import { About, Contact, Home, Error } from "./pages";
 import { Header, Footer } from "./components";
 import styles from "./App.module.css";
 import { reducer } from "./reducer";
-import { sumIncome, sumExpenses, sumBalance } from "./Utils";
 
 const stateKey = "wsdvbnjuytfcvhjiuytr";
 

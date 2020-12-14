@@ -20,7 +20,7 @@ const AddTransaction = () => {
 
   const handleSubmit = () => {
     if (title && amount) {
-      addTransaction(title, amount);
+      addTransaction(title, amount, new Date().toLocaleDateString());
     }
     setTitle("");
     setAmount("");

@@ -10,10 +10,10 @@ export const AppProvider = ({
   storageKey,
 }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const addTransaction = (title, amount) => {
+  const addTransaction = (title, amount, date) => {
     dispatch({
       type: actionTypes.ADD,
-      payload: { title, amount: parseFloat(amount) },
+      payload: { title, amount: parseFloat(amount), date },
     });
   };
 
