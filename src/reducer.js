@@ -1,54 +1,61 @@
 import actionTypes from "./actionTypes";
 import { v4 as idMaker } from "uuid";
-
+import { sumBalance, sumIncome, sumExpenses } from "./Utils.js";
 export const reducer = (state, action) => {
   console.log("state", state, "action", action);
+  const filterItem = item => {
+    switch (state.searchOption) {
+      case "all":
+        return true;
+      case "income":
+        return item > 0;
+      case "expenses":
+        return item < 0;
+      default:
+        return true;
+    }
+  };
+
   switch (action.type) {
     case actionTypes.ADD:
-      const amount = action.payload.amount;
-      let incomeAdded = 0;
-      let expensesAdded = 0;
-      if (amount > 0) {
-        incomeAdded = amount;
-      } else {
-        expensesAdded = amount;
-      }
-      return {
-        ...state,
-        balance: state.balance + amount,
-        income: state.income + incomeAdded,
-        expenses: state.expenses + expensesAdded,
-        transactions: [
-          ...state.transactions,
-          {
-            id: idMaker(),
-            title: action.payload.title,
-            amount: action.payload.amount,
-            date: action.payload.date,
-          },
-        ],
-      };
-    case actionTypes.DELETE:
-      const transactionToDelete = state.transactions.find(
-        item => item.id === action.payload.id
+      const addedTransactions = [
+        ...state.transactions,
+        {
+          id: idMaker(),
+          title: action.payload.title,
+          amount: action.payload.amount,
+          date: action.payload.date,
+        },
+      ];
+
+      const filteredAdded = addedTransactions.filter(item =>
+        filterItem(item.amount)
       );
 
-      const amountDeducted = transactionToDelete.amount;
-      let incomeDeducted = 0;
-      let expensesDeducted = 0;
-      if (amountDeducted > 0) {
-        incomeDeducted = amountDeducted;
-      } else {
-        expensesDeducted = amountDeducted;
-      }
       return {
         ...state,
-        balance: state.balance - amountDeducted,
-        income: state.income - incomeDeducted,
-        expenses: state.expenses - expensesDeducted,
-        transactions: [
-          ...state.transactions.filter(item => item.id !== action.payload.id),
-        ],
+        balance: sumBalance(filteredAdded),
+        income: sumIncome(filteredAdded),
+        expenses: sumExpenses(filteredAdded),
+        transactions: addedTransactions,
+        searchItems: filteredAdded,
+      };
+    case actionTypes.DELETE:
+      const newTransactions = [
+        ...state.transactions.filter(item => item.id !== action.payload.id),
+      ];
+
+      const filteredNewList = newTransactions.filter(item =>
+        filterItem(item.amount)
+      );
+
+      return {
+        ...state,
+        balance: sumBalance(filteredNewList),
+        income: sumIncome(filteredNewList),
+        expenses: sumExpenses(filteredNewList),
+        transactions: newTransactions,
+        searchItems: filteredNewList,
       };
     default:
       return state;

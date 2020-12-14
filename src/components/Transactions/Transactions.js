@@ -5,10 +5,13 @@ import styles from "./Transactions.module.css";
 
 const Transactions = () => {
   const {
-    state: { transactions },
+    state: { searchItems },
     deleteTransaction,
   } = useGlobalState();
 
+  console.log(useGlobalState());
+
+  const transactions = searchItems;
   if (transactions < 1) {
     return (
       <div>

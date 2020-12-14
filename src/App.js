@@ -16,19 +16,12 @@ const getInitialState = () => {
       income: 0,
       expenses: 0,
       transactions: [],
+      searchItems: [],
+      searchOption: "all",
     };
   }
-  const transactions = initalState.transactions;
-  const balance = initalState.balance;
-  const income = initalState.income;
-  const expenses = initalState.expenses;
 
-  return {
-    transactions,
-    balance,
-    income,
-    expenses,
-  };
+  return initalState;
 };
 const App = () => {
   return (
