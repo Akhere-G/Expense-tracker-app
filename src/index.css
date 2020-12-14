@@ -50,7 +50,7 @@ h6 {
   font-weight: 400;
 }
 
-button {
+.btn {
   border: none;
   padding: 0.4em;
   border-radius: 40px;
@@ -59,8 +59,12 @@ button {
   color: var(--primary-color-1);
   transition: var(--transistion);
 }
+button {
+  border: none;
+}
 
-button:hover {
+.btn:hover,
+.btn:focus {
   color: var(--primary-color-2);
   background-color: var(--primary-bg-3);
   transition: var(--transistion);

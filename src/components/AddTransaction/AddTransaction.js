@@ -59,7 +59,7 @@ const AddTransaction = () => {
           </div>
         </div>
         <div className={styles.formRight}>
-          <button type='submit' onClick={handleSubmit}>
+          <button className='btn' type='submit' onClick={handleSubmit}>
             <Add />
           </button>
         </div>
