@@ -7,8 +7,16 @@ const AppContext = createContext(initialState);
 export const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
+  const addTransaction = (title, amount) => {
+    dispatch({
+      type: actionTypes.ADD,
+      payload: { title, amount },
+    });
+  };
   return (
-    <AppContext.Provider value={{ state }}>{children}</AppContext.Provider>
+    <AppContext.Provider value={{ state, addTransaction }}>
+      {children}
+    </AppContext.Provider>
   );
 };
 

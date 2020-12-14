@@ -1,19 +1,23 @@
 import actionTypes from "./actionTypes";
-
+import { v4 as idMaker } from "uuid";
 export const initialState = {
-  transactions: [
-    { id: 1, title: "Apples", cost: -10 },
-    { id: 2, title: "Haircut", cost: -50 },
-    { id: 3, title: "paycheck", cost: 40 },
-  ],
+  transactions: [],
 };
 
 export const reducer = (state, action) => {
+  console.log("state", state, "action", action);
   switch (action.type) {
     case actionTypes.ADD:
       return {
         ...state,
-        transactions: [...state.transactions, action.payload.transaction],
+        transactions: [
+          ...state.transactions,
+          {
+            id: idMaker(),
+            title: action.payload.title,
+            amount: action.payload.amount,
+          },
+        ],
       };
     default:
       return state;

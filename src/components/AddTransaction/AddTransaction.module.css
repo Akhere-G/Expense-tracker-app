@@ -42,12 +42,23 @@
   margin-right: 0.7em;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
 .titleInput {
   display: flex;
   flex: 1.5;
 }
 
-.priceInput {
+.amountInput {
   display: flex;
 
   flex: 1;
