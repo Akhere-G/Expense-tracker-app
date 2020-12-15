@@ -38,7 +38,7 @@ export const AppProvider = ({
 
   useEffect(() => {
     localStorage.setItem(storageKey, JSON.stringify(state));
-  }, [state]);
+  }, [state, storageKey]);
 
   return (
     <AppContext.Provider

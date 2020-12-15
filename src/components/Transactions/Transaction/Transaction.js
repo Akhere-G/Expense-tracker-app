@@ -21,7 +21,7 @@ const Transaction = ({ id, title, amount, date, deleteTransaction }) => {
       </div>
       <div className={styles.right}>
         <p className={styles.amount}>
-          {sign}£{Math.abs(amount)}
+          {sign}£{Math.abs(amount).toFixed(2)}
         </p>
       </div>
     </div>

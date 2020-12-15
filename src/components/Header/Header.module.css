@@ -36,7 +36,9 @@
 }
 
 .link:hover,
-.logo:hover {
+.logo:hover,
+.link:focus,
+.logo:focus {
   transform: scale(1.02);
   transition: var(--transistion);
   color: var(--focus-color);
@@ -46,10 +48,12 @@
   color: var(--focus-color);
 }
 
-.activeLink:hover {
+.activeLink:hover,
+.activeLink:focus {
   transform: scale(1);
 }
 
-.activeLink a:hover {
+.activeLink a:hover,
+.activeLink a:focus {
   cursor: default;
 }

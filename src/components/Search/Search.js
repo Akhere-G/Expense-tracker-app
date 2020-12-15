@@ -5,18 +5,19 @@ import useGlobalState from "../../context";
 
 const options = ["all", "income", "expenses"];
 const Search = () => {
-  const { changeSearchOption } = useGlobalState();
+  const {
+    changeSearchOption,
+    state: { searchOption },
+  } = useGlobalState();
 
-  const [option, setOption] = useState(options[0]);
-  const choseOption = newOption => {
-    console.log("switched to: ", newOption);
-    setOption(newOption);
-    changeSearchOption(newOption);
-  };
   return (
     <div className={`mainBox ${styles.search}`}>
       <h4>Sort Transactions</h4>
-      <Selector choseOption={choseOption} value={option} options={options} />
+      <Selector
+        choseOption={changeSearchOption}
+        value={searchOption}
+        options={options}
+      />
     </div>
   );
 };

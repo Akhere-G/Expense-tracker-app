@@ -11,17 +11,17 @@ const Balance = () => {
     <div className={styles.balance}>
       <h3>Your Balance</h3>
       <h2 className={styles.number}>
-        {sign}£{Math.abs(balance)}
+        {sign}£{Math.abs(balance).toFixed(2)}
       </h2>
       <div className={`${styles.body} mainBox`}>
         <div className={styles.income}>
           <h4>INCOME</h4>
-          <p>+£{income}</p>
+          <p>+£{income.toFixed(2)}</p>
         </div>
         <div className={styles.separator} />
         <div className={styles.expenses}>
           <h4>EXPENSES</h4>
-          <p>-£{Math.abs(expenses)}</p>
+          <p>-£{Math.abs(expenses).toFixed(2)}</p>
         </div>
       </div>
     </div>

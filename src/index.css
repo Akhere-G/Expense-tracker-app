@@ -80,3 +80,7 @@ button {
   align-items: center;
   height: 100%;
 }
+
+.title {
+  margin-bottom: 1em;
+}

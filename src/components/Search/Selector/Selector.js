@@ -5,10 +5,6 @@ import styles from "./Selector.module.css";
 const Selector = ({ value, choseOption, options }) => {
   const [showMenu, setShowMenu] = useState(false);
 
-  const openMenu = () => {
-    setShowMenu(true);
-  };
-
   const toggleMenu = () => {
     setShowMenu(!showMenu);
   };
