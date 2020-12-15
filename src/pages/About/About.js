@@ -11,7 +11,7 @@ const About = () => {
         the expenses and income. Add a title for the expense/income and an
         amount. A negative amount for an expense and a positive amount for an
         income. Filter transactions to show only expenses, incomes or both.
-        Redux is used to control the state.
+        A reducer is used to control the state.
       </p>
     </div>
   );
