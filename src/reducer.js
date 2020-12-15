@@ -3,7 +3,6 @@ import { v4 as idMaker } from "uuid";
 import { sumBalance, sumIncome, sumExpenses, filterFunc } from "./Utils.js";
 
 export const reducer = (state, action) => {
-  console.log("state", state, "action", action);
   const filterItem = item => {
     return filterFunc(state.searchOption, item);
   };
@@ -50,7 +49,6 @@ export const reducer = (state, action) => {
         searchItems: filteredNewList,
       };
     case actionTypes.FILTER:
-      console.log("filtering using: ", action.payload);
       const newSearchOption = action.payload;
       const filteredList = state.transactions.filter(item =>
         filterFunc(newSearchOption, item.amount)

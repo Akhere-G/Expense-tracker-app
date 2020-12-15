@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./Search.module.css";
 import Selector from "./Selector/Selector";
 import useGlobalState from "../../context";

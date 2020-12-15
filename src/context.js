@@ -29,7 +29,6 @@ export const AppProvider = ({
       case "all":
       case "income":
       case "expenses":
-        console.log("returning a dispatch called", searchOption);
         return dispatch({ type: actionTypes.FILTER, payload: searchOption });
       default:
         console.error("Inccorrect search option");
