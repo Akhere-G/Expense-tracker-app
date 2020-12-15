@@ -1,8 +1,10 @@
 import React from "react";
+import Helmet from "react-helmet";
 
 const About = () => {
   return (
     <div>
+      <Helmet title='Expense Tracker | about' />
       <h2 className='title'>About </h2>
       <p>
         My name is Akhere Ihoeghinlan and this is a react project that tracks

@@ -84,3 +84,7 @@ button {
 .title {
   margin-bottom: 1em;
 }
+
+.mt-2 {
+  margin: 2em auto;
+}

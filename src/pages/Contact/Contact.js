@@ -1,8 +1,11 @@
 import React from "react";
+import Helmet from "react-helmet";
 
 const Contact = () => {
   return (
     <div>
+      <Helmet title='Expense Tracker | contact' />
+
       <h2 className='title'>Contact</h2>
       <p>
         If you have any questions, I am happy to answer on my email. On my
