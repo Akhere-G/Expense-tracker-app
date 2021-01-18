@@ -2,7 +2,7 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 import { AppProvider } from "./context";
 import { About, Contact, Home, Error } from "./pages";
-import { Header, Footer } from "./components";
+import { Navbar, Footer } from "./components";
 import styles from "./App.module.css";
 import { reducer } from "./reducer";
 
@@ -24,6 +24,11 @@ const getInitialState = () => {
   return initalState;
 };
 const App = () => {
+  const links = [
+    { name: "home", slug: "/" },
+    { name: "about", slug: "/about" },
+    { name: "contact", slug: "/contact" },
+  ];
   return (
     <AppProvider
       initialState={getInitialState()}
@@ -31,7 +36,7 @@ const App = () => {
       storageKey={stateKey}
     >
       <div className={styles.app}>
-        <Header />
+        <Navbar links={links} title='Expenses' />
         <main className={styles.main}>
           <Switch>
             <Route exact path='/about'>

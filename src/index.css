@@ -13,7 +13,7 @@
   --plus: #6dd89e;
   --negative: #b15252;
   --focus-color: #fe8;
-  --transistion: all linear 150ms;
+  --transition: all linear 150ms;
 }
 
 * {
@@ -57,7 +57,7 @@ h6 {
   background-color: var(--primary-bg-2);
   cursor: pointer;
   color: var(--primary-color-1);
-  transition: var(--transistion);
+  transition: var(--transition);
 }
 button {
   border: none;
@@ -67,7 +67,7 @@ button {
 .btn:focus {
   color: var(--primary-color-2);
   background-color: var(--primary-bg-3);
-  transition: var(--transistion);
+  transition: var(--transition);
 }
 
 .mainBox {
